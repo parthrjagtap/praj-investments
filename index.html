@@ -1,16 +1,267 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>PRAJ INVESTMENT</title>
-  </head>
-  <body>
-    <h1>PRAJ INVESTMENT</h1>
-<p>Coming soon...</p>
-<img src="https://raw.githubusercontent.com/parthrjagtap/praj-investments/refs/heads/main/work-in-progress.jpg" alt="work in progress" >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAJ INVESTMENT | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
-<p>Work in progress</p>
+<!-- Header -->
+<header>
+    <div class="header-container">
+        <a id="logolink" href="http://prajinvestment.in/"><div class="logo">PRAJ <span class="accent-text">INVESTMENT</span></div></a>
+
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Protecting Your Family, <br>Growing Your Wealth.</h1>
+        <p>Authorized Investment & Insurance Advisors providing tailored financial roadmaps for Indian families.</p>
+        <button class="sip-btn" onclick="openModal()">Start a SIP Now</button>
+        <button class="sip-btn" onclick="openMediModal()">Start an Insurance Policy</button>
+    </div>
+</section>
+
+<!-- Brand Slideshow (AMC Logos) -->
+<section class="brand-section">
+    <h2 class="section-title">Our Trusted Partners</h2>
+    <div class="brand-slider">
+        <div class="brand-track">
+            <!-- Replace src with your AMC logo paths -->
+            <div class="slide"><img src="/images/amc/aditya_birla_new.png" alt="/images/amc/aditya_birla_new.png"></div>
+             <div class="slide"><img src="/images/amc/axis.png" alt="/images/amc/axis.png"></div>
+             <div class="slide"><img src="/images/amc/baroda_pioneer.png" alt="/images/amc/baroda_pioneer.png"></div>
+             <div class="slide"><img src="/images/amc/bnp_paribas.png" alt="/images/amc/bnp_paribas.png"></div>
+             <div class="slide"><img src="/images/amc/boi_axa.png" alt="/images/amc/boi_axa.png"></div>
+             <div class="slide"><img src="/images/amc/canara_robeco.png" alt="/images/amc/canara_robeco.png"></div>
+             <div class="slide"><img src="/images/amc/dsp.png" alt="/images/amc/dsp.png"></div>
+             <div class="slide"><img src="/images/amc/edelweiss.png" alt="/images/amc/edelweiss.png"></div>
+             <div class="slide"><img src="/images/amc/franklin.png" alt="/images/amc/franklin.png"></div>
+             <div class="slide"><img src="/images/amc/hdfc_new.png" alt="/images/amc/hdfc_new.png"></div>
+             <div class="slide"><img src="/images/amc/hsbc_new.png" alt="/images/amc/hsbc_new.png"></div>
+             <div class="slide"><img src="/images/amc/icici_new.png" alt="/images/amc/icici_new.png"></div>
+             <div class="slide"><img src="/images/amc/idbi.png" alt="/images/amc/idbi.png"></div>
+             <div class="slide"><img src="/images/amc/idfc.png" alt="/images/amc/idfc.png"></div>
+             <div class="slide"><img src="/images/amc/iifl_new.png" alt="/images/amc/iifl_new.png"></div>
+             <div class="slide"><img src="/images/amc/indiabulls.png" alt="/images/amc/indiabulls.png"></div>
+             <div class="slide"><img src="/images/amc/invesco.png" alt="/images/amc/invesco.png"></div>
+             <div class="slide"><img src="/images/amc/iti.png" alt="/images/amc/iti.png"></div>
+             <div class="slide"><img src="/images/amc/jm_financial.png" alt="/images/amc/jm_financial.png"></div>
+             <div class="slide"><img src="/images/amc/kotak_mahindra_new.png" alt="/images/amc/kotak_mahindra_new.png"></div>
+             <div class="slide"><img src="/images/amc/larsen_turbo_new.png" alt="/images/amc/larsen_turbo_new.png"></div>
+             <div class="slide"><img src="/images/amc/lic.png" alt="/images/amc/lic.png"></div>
+             <div class="slide"><img src="/images/amc/mahindra.png" alt="/images/amc/mahindra.png"></div>
+             <div class="slide"><img src="/images/amc/mirae_asset.png" alt="/images/amc/mirae_asset.png"></div>
+             <div class="slide"><img src="/images/amc/motilal_oswal.png" alt="/images/amc/motilal_oswal.png"></div>
+             <div class="slide"><img src="/images/amc/navi.png" alt="/images/amc/navi.png"></div>
+             <div class="slide"><img src="/images/amc/nippon_india.png" alt="/images/amc/nippon_india.png"></div>
+             <div class="slide"><img src="/images/amc/nj.png" alt="/images/amc/nj.png"></div>
+             <div class="slide"><img src="/images/amc/pgim.png" alt="/images/amc/pgim.png"></div>
+             <div class="slide"><img src="/images/amc/ppfas.png" alt="/images/amc/ppfas.png"></div>
+             <div class="slide"><img src="/images/amc/quant.png" alt="/images/amc/quant.png"></div>
+             <div class="slide"><img src="/images/amc/quantum.png" alt="/images/amc/quantum.png"></div>
+             <div class="slide"><img src="/images/amc/samco.png" alt="/images/amc/samco.png"></div>
+             <div class="slide"><img src="/images/amc/sbi.png" alt="/images/amc/sbi.png"></div>
+             <div class="slide"><img src="/images/amc/shriram_new.png" alt="/images/amc/shriram_new.png"></div>
+             <div class="slide"><img src="/images/amc/Star_Health_and_Allied_Insurance.svg.png" alt="/images/amc/Star_Health_and_Allied_Insurance.svg.png"></div>
+             <div class="slide"><img src="/images/amc/sundaram.png" alt="/images/amc/sundaram.png"></div>
+             <div class="slide"><img src="/images/amc/tata.png" alt="/images/amc/tata.png"></div>
+             <div class="slide"><img src="/images/amc/taurus.png" alt="/images/amc/taurus.png"></div>
+             <div class="slide"><img src="/images/amc/trust.png" alt="/images/amc/trust.png"></div>
+             <div class="slide"><img src="/images/amc/union.png" alt="/images/amc/union.png"></div>
+             <div class="slide"><img src="/images/amc/uti.png" alt="/images/amc/uti.png"></div>
+             <div class="slide"><img src="/images/amc/whiteoak.png" alt="/images/amc/whiteoak.png"></div>
+        </div>
+    </div>
+</section>
+
+<!-- About Snippet -->
+<section class="about-snippet">
+    <div class="container">
+        <h2>Experience Meets Trust</h2>
+        <p>PRAJ Investment and Insurance Services is dedicated to helping individuals navigate the complexities of financial planning. We don't just sell products; we build long-term relationships based on transparency and results.</p>
+        <a href="about.html" class="text-link">Learn more about our philosophy &rarr;</a>
+    </div>
+</section>
+
+<!-- Testimonial Slideshow -->
+<!-- High-Impact Testimonial Section -->
+<!--<section class="testimonial-big-block">-->
+<!--    <h2 class="section-title">Success Stories</h2>-->
+
+<!--    <div class="slider-wrapper">-->
+<!--        <div class="testimonial-container" id="testimonial-container">-->
+
+<!--&lt;!&ndash;            <div class="t-slide active" data-type="image">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="t-content">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <img src="images/client1.jpg" alt="Client" class="client-img">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="t-text">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p>"PRAJ Investment didn't just give me a policy; they gave me peace of mind. Their approach to SIPs is disciplined and data-driven."</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h4>- Amit Khurana</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <span>Business Owner</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+
+<!--            &lt;!&ndash; Slide 2: Video Testimonial &ndash;&gt;-->
+<!--            <div class="t-slide" data-type="video">-->
+<!--                <div class="t-content">-->
+<!--                    <div class="video-container">-->
+<!--                        &lt;!&ndash; Use an iframe for YouTube/Vimeo or <video> for local files &ndash;&gt;-->
+<!--                        <iframe src="https://www.youtube.com/embed/9YJJ2KqrJsM?enablejsapi=1" title="Testimonial Video" frameborder="0" allowfullscreen></iframe>-->
+<!--                    </div>-->
+<!--                    <div class="t-text">-->
+<!--                        <h4>- Mr. Yogesh Bari</h4>-->
+<!--                        <span>Sports Officer, Pune</span>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--&lt;!&ndash;            &lt;!&ndash; Slide 3: Pure Text/Quote &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;            <div class="t-slide" data-type="text">&ndash;&gt;-->
+<!--&lt;!&ndash;                <div class="t-content">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="t-text large-quote">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <i class="fas fa-quote-left"></i>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <p>"The most transparent advisor I have met in 10 years of investing in India. No hidden agendas."</p>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <h4>- Dr. Vikram Mehta</h4>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+
+<!--        </div>-->
+
+<!--        &lt;!&ndash; Slider Controls &ndash;&gt;-->
+<!--        <div class="slider-controls">-->
+<!--            <button class="ctrl-btn" onclick="prevSlide()"><i class="fas fa-chevron-left"></i></button>-->
+<!--            <button class="ctrl-btn" id="pause-btn" onclick="togglePause()"><i class="fas fa-pause"></i></button>-->
+<!--            <button class="ctrl-btn" onclick="nextSlide()"><i class="fas fa-chevron-right"></i></button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 
 
-  </body>
+
+<section class="testimonial-section">
+    <div class="testimonial-wrapper">
+        <div class="testimonial-container" id="testimonial-slider">
+            <div class="t-slide" data-type="video">
+                <div class="t-content">
+                    <div class="t-media">
+                        <div class="video-overlay">
+                            <iframe src="https://www.youtube.com/embed/9YJJ2KqrJsM" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="t-info">
+                        <i class="fas fa-video"></i>
+                        <p>A claim testimonial from our client.</p>
+                        <h4>- Yogesh Bari <br> Sports Officer, Pune</h4>
+                        <span>Video Testimonial</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 1: Image + Text -->
+            <div class="t-slide active" data-type="image">
+                <div class="t-content">
+                    <div class="t-media">
+                        <img src="client1.jpg" alt="Client Name">
+                    </div>
+                    <div class="t-info">
+                        <i class="fas fa-quote-left"></i>
+                        <p>Praj Investment helped me secure my family's future with a solid term plan and a disciplined SIP. Highly professional!</p>
+                        <h4>- </h4>
+                        <span>Software Engineer, Pune</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Video -->
+
+        </div>
+
+        <!-- Navigation Controls -->
+        <div class="t-controls">
+            <button class="t-prev" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+            <button class="t-pause" id="pauseBtn" onclick="toggleAutoPlay()"><i class="fas fa-pause"></i></button>
+            <button class="t-next" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+<!-- SIP Popup Modal -->
+<div class="modal-overlay" id="sipModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3>Connect with an Advisor</h3>
+        <p>How would you like to start your investment journey today?</p>
+        <div class="modal-btns">
+            <a href="tel:+918237057450" class="btn-call"><i class="fas fa-phone"></i> Call Us</a>
+            <a href="https://wa.me/918237057450?text=I%20want%20to%20start%20a%20SIP%20with%20Praj%20Investment" class="btn-wa"><i class="fab fa-whatsapp"></i> Message Us</a>
+        </div>
+    </div>
+</div>
+<div class="modal-overlay" id="mediModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeMediModal()">&times;</span>
+        <h3>Connect with an Advisor</h3>
+        <p>How would you like to buy an insurance policy and protect your family?</p>
+        <div class="modal-btns">
+            <a href="tel:+918237057450" class="btn-call"><i class="fas fa-phone"></i> Call Us</a>
+            <a href="https://wa.me/918237057450?text=I%20want%20to%20start%20an%20Insurance%20Policy%20with%20Praj%20Investment" class="btn-wa"><i class="fab fa-whatsapp"></i> Message Us</a>
+        </div>
+    </div>
+</div>
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/918237057450?text=Hello!%20I%20have%20a%20query%20regarding%20investments." class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h4>PRAJ INVESTMENT</h4>
+            <p>Your Wealth, Our Priority.</p>
+        </div>
+        <div class="footer-nav">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Reach Us</h4>
+
+            <p><i class="fas fa-envelope"></i> <a href="mailto:investment.praj@gmail.com">investment.praj@gmail.com</a> </p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+91 8237057450">+91 8237057450</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+91 9881157450">+91 9881157450</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+91 8265057450">+91 8265057450</a></p>
+
+
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 PRAJ Investment and Insurance Services. All Rights Reserved.
+    </div>
+</footer>
+
+<script src="js/index.js"></script>
+</body>
 </html>
