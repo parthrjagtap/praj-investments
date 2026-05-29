@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAJ INVESTMENT | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Font Awesome for Icons -->
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="header-container">
+        <a id="logolink" href="http://prajinvestment.in/"><div class="logo">PRAJ <span class="accent-text">INVESTMENT</span></div></a>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="page-header">
+    <h1 class="section-title">SIP Calculator</h1>
+</section>
+<section class="content-body">
+
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+
+        
+    </style>
+
+    <h2 class="sr-only">SIP / Lumpsum / Step-up SIP calculator — adjust inputs to see projected returns</h2>
+
+    <div class="calc">
+        <div class="tabs" id="tabs">
+            <button class="tab active" data-mode="sip">SIP</button>
+            <button class="tab" data-mode="lumpsum">Lumpsum</button>
+            <button class="tab" data-mode="stepup">Step-up SIP</button>
+        </div>
+
+        <div class="grid">
+            <div class="sliders" id="sliders">
+                <div class="field" id="field-amount">
+                    <label>
+                        <span class="lbl-text" id="lbl-amount-text">Monthly investment</span>
+                        <input class="val-input" id="lbl-amount" value="₹25,000" inputmode="numeric">
+                    </label>
+                    <input type="range" id="amount" min="100" max="100000" step="500" value="25000">
+                </div>
+                <div class="field" id="field-stepup" style="display:none">
+                    <label>
+                        <span class="lbl-text">Annual step-up</span>
+                        <input class="val-input" id="lbl-stepup" value="10%" inputmode="numeric">
+                    </label>
+                    <input type="range" id="stepup" min="1" max="50" step="1" value="10">
+                </div>
+                <div class="field">
+                    <label>
+                        <span class="lbl-text">Expected return (p.a.)</span>
+                        <input class="val-input" id="lbl-rate" value="12%" inputmode="numeric">
+                    </label>
+                    <input type="range" id="rate" min="1" max="30" step="0.5" value="12">
+                </div>
+                <div class="field">
+                    <label>
+                        <span class="lbl-text">Time period</span>
+                        <input class="val-input" id="lbl-period" value="10 yr" inputmode="numeric">
+                    </label>
+                    <input type="range" id="period" min="1" max="40" step="1" value="10">
+                </div>
+                <button class="sip-btn" onclick="openModal()">Start a SIP Now</button>
+            </div>
+
+            <div>
+                <div class="results">
+                    <div class="result-row">
+                        <span class="lbl">Invested amount</span>
+                        <span class="val" id="r-invested">₹0</span>
+                    </div>
+                    <div class="result-row">
+                        <span class="lbl">Est. returns</span>
+                        <span class="val" id="r-returns">₹0</span>
+                    </div>
+                    <hr>
+                    <div class="result-row total">
+                        <span class="lbl">Total value</span>
+                        <span class="val" id="r-total">₹0</span>
+                    </div>
+                </div>
+                <div class="ring-container">
+                    <svg class="progress-ring" width="180" height="180">
+                        <circle class="ring-bg" cx="90" cy="90" r="70"/>
+                        <circle class="ring-progress" id="ring" cx="90" cy="90" r="70"/>
+                    </svg>
+                    <div class="ring-center"></div>
+                </div>
+                <div class="bar-labels">
+                    <span id="bar-invested-label">50% invested</span>
+                    <span id="bar-returns-pct">50% returns</span>
+                </div>
+                <button class="sip-btn" onclick="openModal()">Start a SIP Now</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+    </script>
+
+</section>
+
+<a id="floatwa" href="https://wa.me/918237057450?text=Hello!%20I%20have%20a%20query%20regarding%20investments." class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h4>PRAJ INVESTMENT</h4>
+            <p>Your Wealth, Our Priority.</p>
+        </div>
+        <div class="footer-nav">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Reach Us</h4>
+            <p><i class="fas fa-envelope"></i> investment.praj@gmail.com</p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+91 8237057450">+91 8237057450</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+91 9881157450">+91 9881157450</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+91 8265057450">+91 8265057450</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 PRAJ Investment and Insurance Services. All Rights Reserved.
+    </div>
+</footer>
+
+<script src="js/index.js"></script>
+<script src="js/sipcalc.js"></script>
+
+</body>
+</html>

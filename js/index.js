@@ -195,7 +195,7 @@ function moveSlide(n) {
 function startTimer() {
     slideTimer = setInterval(() => {
         moveSlide(1);
-    }, 8000); // 8 seconds per slide
+    }, 10000); // 8 seconds per slide
 }
 
 function resetTimer() {
