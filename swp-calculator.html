@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRAJ INVESTMENT | SWP Calculator</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="header-container">
+        <a id="logolink" href="http://prajinvestment.in/"><div class="logo">PRAJ <span class="accent-text">INVESTMENT</span></div></a>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                <li><a href="swp-calculator.html" class="active">SWP Calculator</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header">
+    <h1 class="section-title">SWP Calculator</h1>
+</section>
+
+<section class="content-body">
+
+    <h2 class="sr-only">SWP (Systematic Withdrawal Plan) calculator — see how long your corpus lasts and how much you earn</h2>
+
+    <!-- What is SWP — plain language explainer -->
+    <div class="swp-explainer">
+        <div class="explainer-icon"><i class="fas fa-piggy-bank"></i></div>
+        <div>
+            <strong>What is an SWP?</strong>
+            You invest a lump sum once, then withdraw a fixed amount every month — like giving yourself a salary from your own money. The rest stays invested and keeps growing.
+        </div>
+    </div>
+
+    <div class="calc">
+
+        <div class="grid swp-grid">
+
+            <!-- ── LEFT: Sliders ── -->
+            <div class="sliders">
+
+                <div class="field">
+                    <label>
+                        <span class="lbl-text">Total investment (corpus)</span>
+                        <input class="val-input" id="lbl-corpus" value="₹10,00,000" inputmode="numeric">
+                    </label>
+                    <input type="range" id="corpus" min="10000" max="10000000" step="10000" value="1000000">
+                </div>
+
+                <div class="field">
+                    <label>
+                        <span class="lbl-text">Monthly withdrawal</span>
+                        <input class="val-input" id="lbl-withdrawal" value="₹10,000" inputmode="numeric">
+                    </label>
+                    <input type="range" id="withdrawal" min="500" max="200000" step="500" value="10000">
+                </div>
+
+                <div class="field">
+                    <label>
+                        <span class="lbl-text">Expected return (p.a.)</span>
+                        <input class="val-input" id="lbl-rate" value="8%" inputmode="numeric">
+                    </label>
+                    <input type="range" id="rate" min="1" max="30" step="0.5" value="8">
+                </div>
+
+                <div class="field">
+                    <label>
+                        <span class="lbl-text">Withdrawal period</span>
+                        <input class="val-input" id="lbl-period" value="10 yr" inputmode="numeric">
+                    </label>
+                    <input type="range" id="period" min="1" max="40" step="1" value="10">
+                </div>
+
+                <button class="sip-btn" onclick="openModal()">
+                    <i class="fas fa-phone-alt" style="margin-right:8px"></i>Talk to an Advisor
+                </button>
+            </div>
+
+            <!-- ── RIGHT: Results ── -->
+            <div class="swp-results-col">
+
+                <!-- Sustainability status badge -->
+                <div class="sustainability-badge" id="sustainBadge">
+                    <i class="fas fa-circle-check" id="sustainIcon"></i>
+                    <span id="sustainText">Corpus is sustainable</span>
+                </div>
+
+                <!-- 3 headline cards -->
+                <div class="swp-cards">
+                    <div class="swp-card swp-card--corpus">
+                        <div class="swp-card-label"><i class="fas fa-wallet"></i> Invested corpus</div>
+                        <div class="swp-card-value" id="r-corpus">₹0</div>
+                    </div>
+                    <div class="swp-card swp-card--withdrawn">
+                        <div class="swp-card-label"><i class="fas fa-arrow-up-from-bracket"></i> Total withdrawn</div>
+                        <div class="swp-card-value" id="r-withdrawn">₹0</div>
+                    </div>
+                    <div class="swp-card swp-card--remaining">
+                        <div class="swp-card-label"><i class="fas fa-seedling"></i> Remaining corpus</div>
+                        <div class="swp-card-value" id="r-remaining">₹0</div>
+                    </div>
+                </div>
+
+                <!-- Visual ring -->
+                <div class="ring-container">
+                    <svg class="progress-ring" width="180" height="180">
+                        <circle class="ring-bg" cx="90" cy="90" r="70"/>
+                        <circle class="ring-progress" id="ring" cx="90" cy="90" r="70"/>
+                    </svg>
+                    <div class="ring-center"></div>
+                </div>
+                <div class="bar-labels">
+                    <span id="bar-withdrawn-label">— withdrawn</span>
+                    <span id="bar-remaining-pct">— remaining</span>
+                </div>
+
+                <!-- Plain-English summary box -->
+                <div class="swp-insight" id="swpInsight"></div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="swp-info-section">
+    <div class="swp-info-container">
+ 
+        <!-- What is SWP -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-info-circle"></i> What is a Systematic Withdrawal Plan?</h2>
+            <p>A Systematic Withdrawal Plan (SWP) lets you regularly withdraw a fixed amount from your mutual fund investment — monthly, quarterly, or yearly. You choose the date; the AMC transfers the amount directly to your registered bank account. The rest of your corpus stays invested and continues to earn returns.</p>
+        </div>
+ 
+        <!-- How it works -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-calculator"></i> How Does the SWP Calculator Work?</h2>
+            <p>Enter four inputs and the calculator instantly shows you projected results:</p>
+            <div class="info-steps">
+                <div class="info-step">
+                    <div class="step-num">1</div>
+                    <div><strong>Total Investment Amount</strong> — the lump sum you invest upfront</div>
+                </div>
+                <div class="info-step">
+                    <div class="step-num">2</div>
+                    <div><strong>Monthly Withdrawal</strong> — fixed amount you want to receive each month</div>
+                </div>
+                <div class="info-step">
+                    <div class="step-num">3</div>
+                    <div><strong>Expected Annual Return</strong> — the rate at which your corpus grows</div>
+                </div>
+                <div class="info-step">
+                    <div class="step-num">4</div>
+                    <div><strong>Investment Tenure</strong> — how many years you plan to withdraw</div>
+                </div>
+            </div>
+            <p style="margin-top:1rem;">The calculator uses monthly compounding — each month, your remaining corpus earns interest, and then your withdrawal is deducted. This matches the standard used by mutual fund houses.</p>
+        </div>
+ 
+        <!-- Formula -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-superscript"></i> The Formula</h2>
+            <div class="formula-box">
+                A = PMT × [ ((1 + r/n)<sup>nt</sup> − 1) ÷ (r/n) ]
+            </div>
+            <div class="formula-legend">
+                <div><span class="fl">A</span> Final value of your investment</div>
+                <div><span class="fl">PMT</span> Withdrawal amount per period</div>
+                <div><span class="fl">r</span> Annual rate of return</div>
+                <div><span class="fl">n</span> Compounding frequency (12 for monthly)</div>
+                <div><span class="fl">t</span> Investment duration in years</div>
+            </div>
+            <div class="formula-example">
+                <strong>Example:</strong> ₹5,00,000 corpus · ₹8,000/month withdrawal · 12% p.a. · 5 years
+                <div class="formula-example-result">
+                    <span>Total invested: <strong>₹5,00,000</strong></span>
+                    <span>Total withdrawn: <strong>₹4,80,000</strong></span>
+                    <span>Final value: <strong>₹2,38,441</strong></span>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- Advantages -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-star"></i> Why Use an SWP Calculator?</h2>
+            <div class="advantages-grid">
+                <div class="adv-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Financial Planning</h4>
+                    <p>Decide the right withdrawal amount and frequency that aligns with your income needs and financial goals.</p>
+                </div>
+                <div class="adv-card">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Realistic Expectations</h4>
+                    <p>See exactly how long your corpus lasts and how much income it generates — no guesswork.</p>
+                </div>
+                <div class="adv-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Avoid Impulsive Withdrawals</h4>
+                    <p>Stay disciplined during market dips by having a pre-planned withdrawal schedule.</p>
+                </div>
+                <div class="adv-card">
+                    <i class="fas fa-sliders-h"></i>
+                    <h4>Optimise Cash Flow</h4>
+                    <p>Adjust amount and frequency to match your monthly expenses while keeping your corpus intact.</p>
+                </div>
+            </div>
+        </div>
+ 
+        <!-- FAQ Accordion -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <div class="faq-list">
+ 
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Is SWP a good investment option?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>SWP can be an excellent option for generating regular cash flow from your investments — especially for retirees or anyone needing a steady monthly income. However, the suitability depends on your risk tolerance, liquidity needs, and the type of mutual fund you choose. Equity funds carry market risk, while debt funds offer more stability. It's best to consult an advisor before setting up an SWP.</p>
+                    </div>
+                </div>
+ 
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        How reliable are the results from this SWP Calculator?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>The calculator gives a close estimate based on your inputs using the standard monthly compounding formula used by AMCs. However, actual returns will vary depending on market performance. The expected rate of return you enter is an assumption — real mutual fund returns are not guaranteed and can fluctuate. Use the results as a planning guide, not a guarantee.</p>
+                    </div>
+                </div>
+ 
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        What formula does this SWP Calculator use?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>The calculator uses monthly compounding — each month, the remaining corpus earns interest (annual rate ÷ 12), and then the withdrawal is deducted. This follows the standard convention used by mutual fund houses and official calculators: <strong>withdraw first, then grow</strong>. The formula is A = PMT × [((1 + r/n)^nt − 1) ÷ (r/n)], where r is annual return, n is 12, and t is tenure in years.</p>
+                    </div>
+                </div>
+ 
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        When is it advisable to opt for an SWP?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>SWP is most suitable when you have a large lump sum and need a regular income stream — retirement planning being the most common use case. It's also useful for supplementing salary income, funding children's education fees on a periodic basis, or managing post-retirement medical expenses. The key is ensuring the withdrawal amount doesn't outpace the returns your corpus earns.</p>
+                    </div>
+                </div>
+ 
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Is the SWP Calculator user-friendly?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>Yes — just adjust the four sliders (corpus, monthly withdrawal, expected return, and time period) and the results update instantly. You can also type directly into the value fields. The calculator tells you in plain language whether your corpus is sustainable and how much you'll have left at the end of the period.</p>
+                    </div>
+                </div>
+ 
+            </div>
+        </div>
+ 
+    </div>
+</section>
+
+<!-- SIP / Contact Modal (reused from index) -->
+<div class="modal-overlay" id="sipModal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <h3>Connect with an Advisor</h3>
+        <p>Let us help you plan the right SWP for your retirement income.</p>
+        <div class="modal-btns">
+            <a href="tel:+918237057450" class="btn-call"><i class="fas fa-phone"></i> Call Us</a>
+            <a href="https://wa.me/918237057450?text=I%20want%20to%20plan%20an%20SWP%20with%20Praj%20Investment" class="btn-wa"><i class="fab fa-whatsapp"></i> Message Us</a>
+        </div>
+    </div>
+</div>
+
+<a id="floatwa" href="https://wa.me/918237057450?text=Hello!%20I%20have%20a%20query%20regarding%20investments." class="wa-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h4>PRAJ INVESTMENT</h4>
+            <p>Your Wealth, Our Priority.</p>
+        </div>
+        <div class="footer-nav">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                <li><a href="swp-calculator.html">SWP Calculator</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact">
+            <h4>Reach Us</h4>
+            <p><i class="fas fa-envelope"></i> <a href="mailto:investment.praj@gmail.com">investment.praj@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+918237057450">+91 8237057450</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+919881157450">+91 9881157450</a></p>
+            <p><i class="fas fa-phone"></i> <a href="tel:+918265057450">+91 8265057450</a></p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2026 PRAJ Investment and Insurance Services. All Rights Reserved.
+    </div>
+</footer>
+
+
+
+<script src="js/index.js"></script>
+<script src="js/swpcalc.js"></script>
+</body>
+</html>

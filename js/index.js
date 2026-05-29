@@ -7,7 +7,54 @@
 //         easing: 'ease-in-out',
 //     });
 // });
+(function () {
+    const track = document.getElementById('galleryTrack');
+    const dotsWrap = document.getElementById('galleryDots');
+    const slides = track ? track.querySelectorAll('.gallery-slide') : [];
+    let current = 0;
+    let autoTimer;
 
+    function buildDots() {
+        slides.forEach((_, i) => {
+            const btn = document.createElement('button');
+            btn.className = 'gallery-dot' + (i === 0 ? ' active' : '');
+            btn.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+            btn.addEventListener('click', () => { galleryGoTo(i); resetAuto(); });
+            dotsWrap.appendChild(btn);
+        });
+    }
+
+    function updateDots() {
+        dotsWrap.querySelectorAll('.gallery-dot').forEach((d, i) => {
+            d.classList.toggle('active', i === current);
+        });
+    }
+
+    function galleryGoTo(n) {
+        current = (n + slides.length) % slides.length;
+        track.style.transform = 'translateX(-' + current * 100 + '%)';
+        updateDots();
+    }
+
+    window.galleryMove = function (dir) {
+        galleryGoTo(current + dir);
+        resetAuto();
+    };
+
+    function startAuto() {
+        autoTimer = setInterval(() => galleryGoTo(current + 1), 6000);
+    }
+
+    function resetAuto() {
+        clearInterval(autoTimer);
+        startAuto();
+    }
+
+    if (slides.length > 0) {
+        buildDots();
+        startAuto();
+    }
+})();
 var arr = ["/images/amc/aditya_birla_new.png",
     "/images/amc/axis.png",
     "/images/amc/baroda_pioneer.png",
@@ -218,3 +265,22 @@ function toggleAutoPlay() {
 
 // Kick it off
 initSlider();
+
+
+function toggleFaq(btn) {
+    const item   = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = btn.classList.contains('open');
+ 
+    /* close all */
+    document.querySelectorAll('.faq-q.open').forEach(b => {
+        b.classList.remove('open');
+        b.closest('.faq-item').querySelector('.faq-a').classList.remove('open');
+    });
+ 
+    /* open clicked one if it was closed */
+    if (!isOpen) {
+        btn.classList.add('open');
+        answer.classList.add('open');
+    }
+}

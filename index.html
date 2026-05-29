@@ -18,6 +18,8 @@
         <nav>
             <ul class="nav-links" id="nav-links">
                 <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                <li><a href="swp-calculator.html">SWP Calculator</a></li>
+
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
                 
@@ -92,10 +94,86 @@
     </div>
 </section>
 
+<section class="gallery-section">
+    <h2 class="section-title">Awards &amp; Events</h2>
+    <p class="gallery-subtitle">Moments that define our journey</p>
+
+    <div class="gallery-slider-wrap">
+        <button class="gallery-arrow gallery-prev" onclick="galleryMove(-1)" aria-label="Previous slide">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+
+        <div class="gallery-viewport">
+            <div class="gallery-track" id="galleryTrack">
+
+                <!-- SLIDE 1 — replace src and caption with your real photo & text -->
+                <div class="gallery-slide">
+                    <div class="gallery-img-wrap">
+                        <img src="/images/gallery/award1.jpg" alt="Best Performer Award 2024">
+                        <div class="gallery-badge"><i class="fas fa-trophy"></i> Award</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Best Performer Award 2024</h3>
+                        <p>Recognized by NJ India Invest for outstanding contribution in mutual fund distribution across Pune region.</p>
+                    </div>
+                </div>
+
+                <!-- SLIDE 2 -->
+                <div class="gallery-slide">
+                    <div class="gallery-img-wrap">
+                        <img src="/images/gallery/event1.jpg" alt="Financial Literacy Camp">
+                        <div class="gallery-badge"><i class="fas fa-calendar-alt"></i> Event</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Financial Literacy Meet</h3>
+                        <p>A financial literacy meet for clients. Addressed by Mr. Payal Shah from Mirae Asset Mutual Fund
+</p>
+<p>4/2/2026</p>
+                    </div>
+                </div>
+
+                <!-- SLIDE 3 -->
+                <div class="gallery-slide">
+                    <div class="gallery-img-wrap">
+                        <img src="/images/gallery/award2.jpg" alt="Top Advisor Recognition">
+                        <div class="gallery-badge"><i class="fas fa-trophy"></i> Award</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Top Advisor Recognition</h3>
+                        <p>Awarded Top Advisor status by HDFC Life Insurance for consistent client servicing and policy persistency excellence.</p>
+                    </div>
+                </div>
+
+                <!-- SLIDE 4 -->
+                <div class="gallery-slide">
+                    <div class="gallery-img-wrap">
+                        <img src="/images/gallery/event2.jpg" alt="Annual Client Meet 2025">
+                        <div class="gallery-badge"><i class="fas fa-calendar-alt"></i> Event</div>
+                    </div>
+                    <div class="gallery-caption">
+                        <h3>Annual Client Meet 2025</h3>
+                        <p>Hosted our annual client appreciation evening, celebrating the milestones our investors achieved through disciplined SIP investments.</p>
+                    </div>
+                </div>
+
+                <!-- Add more slides below following the same pattern -->
+
+            </div>
+        </div>
+
+        <button class="gallery-arrow gallery-next" onclick="galleryMove(1)" aria-label="Next slide">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="gallery-dots" id="galleryDots"></div>
+</section>
 <!-- About Snippet -->
 <section class="about-snippet">
+    
     <div class="container">
         <h2>Experience Meets Trust</h2>
+        <br>
         <p>PRAJ Investment and Insurance Services is dedicated to helping individuals navigate the complexities of financial planning. We don't just sell products; we build long-term relationships based on transparency and results.</p>
         <a href="about.html" class="text-link">Learn more about our philosophy &rarr;</a>
     </div>
@@ -244,6 +322,7 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                <li><a href="swp-calculator.html">SWP Calculator</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>

@@ -19,6 +19,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                <li><a href="swp-calculator.html">SWP Calculator</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
 
@@ -120,6 +121,239 @@
 
 </section>
 
+<section class="swp-info-section">
+    <div class="swp-info-container">
+
+        <!-- What is SIP -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-info-circle"></i> What is an SIP Calculator?</h2>
+            <p>A Systematic Investment Plan (SIP) calculator is an online tool that helps you estimate the future value of your mutual fund investments. Instead of doing complex math manually, you enter three simple inputs — monthly amount, expected return, and time period — and it instantly shows you the projected corpus. It's useful for both new investors just starting out and experienced ones stress-testing different scenarios.</p>
+        </div>
+
+        <!-- How it works -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-calculator"></i> How Does the SIP Calculator Work?</h2>
+            <p>The calculator applies a compound interest formula to simulate how your monthly contributions grow over time. Here's what each input does:</p>
+            <div class="info-steps">
+                <div class="info-step">
+                    <div class="step-num">1</div>
+                    <div><strong>Monthly SIP Amount</strong> — the fixed amount you invest every month</div>
+                </div>
+                <div class="info-step">
+                    <div class="step-num">2</div>
+                    <div><strong>Expected Annual Return</strong> — based on historical fund performance; equity funds have typically delivered 10–14% over the long term</div>
+                </div>
+                <div class="info-step">
+                    <div class="step-num">3</div>
+                    <div><strong>Investment Tenure</strong> — how many years you plan to stay invested; the longer, the more compounding works in your favour</div>
+                </div>
+            </div>
+            <p style="margin-top:1rem;">The calculator also supports <strong>Lumpsum</strong> (one-time investment) and <strong>Step-up SIP</strong> (annual increase in contribution) modes — switch between tabs above.</p>
+        </div>
+
+        <!-- Formula -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-superscript"></i> The Formula</h2>
+            <div class="formula-box">
+                FV = P × [ ((1 + i)<sup>n</sup> − 1) ÷ i ] × (1 + i)
+            </div>
+            <div class="formula-legend">
+                <div><span class="fl">FV</span> Future value of the investment</div>
+                <div><span class="fl">P</span> Monthly SIP amount</div>
+                <div><span class="fl">i</span> Monthly rate of return (annual rate ÷ 12)</div>
+                <div><span class="fl">n</span> Total number of instalments (months)</div>
+            </div>
+            <div class="formula-example">
+                <strong>Example:</strong> ₹5,000/month · 12% p.a. · 7 years
+                <div class="formula-example-result">
+                    <span>Total invested: <strong>₹4,20,000</strong></span>
+                    <span>Est. returns: <strong>₹2,40,000</strong></span>
+                    <span>Future value: <strong>₹6,60,000</strong></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIP Types -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-layer-group"></i> Types of SIPs</h2>
+            <div class="advantages-grid">
+                <div class="adv-card">
+                    <i class="fas fa-repeat"></i>
+                    <h4>Regular SIP</h4>
+                    <p>Fixed amount invested at regular intervals. Best for disciplined savers who want consistent, low-maintenance investing.</p>
+                </div>
+                <div class="adv-card">
+                    <i class="fas fa-arrow-trend-up"></i>
+                    <h4>Step-up SIP</h4>
+                    <p>Automatically increases your SIP amount annually. Ideal for salaried professionals whose income grows over time — fights inflation and builds more wealth.</p>
+                </div>
+                <div class="adv-card">
+                    <i class="fas fa-sliders-h"></i>
+                    <h4>Flexible SIP</h4>
+                    <p>Contribution amount varies each month based on your income or market conditions. Great for people with irregular cash flows.</p>
+                </div>
+                <div class="adv-card">
+                    <i class="fas fa-infinity"></i>
+                    <h4>Perpetual SIP</h4>
+                    <p>No fixed end date — you stay invested indefinitely. Suited for long-term wealth builders with no specific exit timeline.</p>
+                </div>
+                <div class="adv-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Trigger SIP</h4>
+                    <p>Invests only when market levels or NAV hits a pre-set threshold. For experienced investors who want to optimise entry points.</p>
+                </div>
+                <div class="adv-card">
+                    <i class="fas fa-folder-open"></i>
+                    <h4>Multi SIP</h4>
+                    <p>Invest across multiple mutual fund schemes under a single SIP instruction. Simplifies management and enhances diversification.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIP vs Lumpsum -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-scale-balanced"></i> SIP vs Lumpsum</h2>
+            <div class="compare-table-wrap">
+                <table class="compare-table">
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th><i class="fas fa-chart-line"></i> SIP</th>
+                            <th><i class="fas fa-coins"></i> Lumpsum</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Investment type</td>
+                            <td>Regular monthly contributions</td>
+                            <td>Single one-time investment</td>
+                        </tr>
+                        <tr>
+                            <td>Market timing risk</td>
+                            <td class="good">Lower — rupee cost averaging</td>
+                            <td class="warn">Higher — full amount exposed at once</td>
+                        </tr>
+                        <tr>
+                            <td>Diversification</td>
+                            <td class="good">Spread across multiple market cycles</td>
+                            <td class="warn">Limited if timed poorly</td>
+                        </tr>
+                        <tr>
+                            <td>Best for</td>
+                            <td>Salaried investors, long-term wealth creation</td>
+                            <td>Those with surplus funds ready for higher risk</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Common mistakes -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-triangle-exclamation"></i> Common Mistakes to Avoid</h2>
+            <div class="mistakes-list">
+                <div class="mistake-item">
+                    <div class="mistake-icon bad"><i class="fas fa-xmark"></i></div>
+                    <div>
+                        <strong>Stopping SIPs during market dips</strong>
+                        <p>Market downturns are temporary. Pausing SIPs means missing lower NAVs — the best buying opportunity. Stay the course.</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-icon bad"><i class="fas fa-xmark"></i></div>
+                    <div>
+                        <strong>Not increasing contributions over time</strong>
+                        <p>As your income grows, your SIP should too. Use Step-up SIP to automatically scale up and beat inflation.</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-icon bad"><i class="fas fa-xmark"></i></div>
+                    <div>
+                        <strong>Investing without a goal</strong>
+                        <p>Random investing leads to misaligned outcomes. Define what you're saving for — retirement, education, home — and set your SIP accordingly.</p>
+                    </div>
+                </div>
+                <div class="mistake-item">
+                    <div class="mistake-icon bad"><i class="fas fa-xmark"></i></div>
+                    <div>
+                        <strong>Never reviewing fund performance</strong>
+                        <p>Markets change. Review your portfolio periodically and rebalance if a fund is consistently underperforming its benchmark.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="info-block">
+            <h2 class="info-heading"><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            <div class="faq-list">
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        What is an SIP Calculator?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>An SIP calculator is an online tool that estimates the future value of your mutual fund investments made at periodic intervals. It uses a compound interest formula — taking your monthly amount, expected annual return, and tenure — to project how much your corpus could grow to. It's an estimate, not a guarantee, since actual mutual fund returns depend on market performance.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Should I rely solely on the SIP calculator for investment decisions?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>No — the calculator is a planning tool, not a crystal ball. It uses a fixed assumed return which won't match real-world market fluctuations. Use it to set realistic expectations and compare scenarios, but always consult a certified financial advisor before making investment decisions. Your risk tolerance, tax situation, and financial goals matter too.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        What are the key factors influencing SIP returns?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>Three main factors: <strong>market volatility</strong> (short-term fluctuations affect NAV, though long-term trends tend to smooth these out), <strong>economic conditions</strong> (inflation, interest rates, and GDP growth all influence fund performance), and <strong>fund management quality</strong> (the skill and strategy of the fund manager plays a big role in how a fund performs relative to its benchmark).</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        Are SIPs suitable for everyone?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>SIPs are accessible to almost anyone — you can start with as little as ₹500/month. However, the right type of SIP and fund category depends on your age, income stability, risk appetite, and financial goals. Equity SIPs suit long-term investors (5+ years) who can tolerate volatility. Debt fund SIPs are better for capital preservation. Speaking to an advisor helps match the right SIP to your profile.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        What are the tax benefits of SIP investments?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>SIPs in ELSS (Equity Linked Savings Scheme) funds qualify for a tax deduction of up to ₹1.5 lakh per year under Section 80C of the Income Tax Act. For other equity mutual funds, long-term capital gains (held over 1 year) above ₹1 lakh are taxed at 10%, while short-term gains are taxed at 15%. Debt fund gains are taxed as per your income slab. Tax laws can change — consult a tax advisor for current rules.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-q" onclick="toggleFaq(this)">
+                        How often should I review my SIP investments?
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </button>
+                    <div class="faq-a">
+                        <p>At minimum, review your portfolio once a year. Check whether your fund is consistently underperforming its benchmark or category peers over 2–3 years — not just a bad quarter. Also reassess when your life situation changes (new job, marriage, child, approaching retirement). Avoid over-monitoring monthly NAV movements; SIPs are a long game and short-term noise is irrelevant.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
 <a id="floatwa" href="https://wa.me/918237057450?text=Hello!%20I%20have%20a%20query%20regarding%20investments." class="wa-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
 </a>
@@ -136,6 +370,8 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="sip-calculator.html">SIP Calculator</a></li>
+                                <li><a href="swp-calculator.html">SWP Calculator</a></li>
+
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
